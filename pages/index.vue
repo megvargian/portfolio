@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex flex-col p-8 md:p-28 xl:p-36 2xl:p-48">
     <section class="w-full sm:w-2/3 z-10">
-  <h1 class="text-2xl lg:text-3xl text-zinc-400"><span class="text-white">Hello!</span> My name is <span class="text-white">João Vitor</span>. I am a <span class="text-white">full-stack</span> developer.</h1>
+  <h1 class="text-2xl lg:text-3xl text-zinc-400"><span class="text-white">Hello!</span> My name is <span class="text-white">Mike Kouyoumdjian</span>. I am a <span class="text-white">full-stack</span> developer.</h1>
       <div class="flex flex-row mt-4 space-x-3">
         <a
           href="https://drive.google.com/file/d/1LWLfM7JbBLcox8Wb6TYUV5_ZZScDr7bd/view?usp=sharing"

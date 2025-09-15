@@ -60,7 +60,7 @@
     class="flex flex-col space-y-2 fixed md:hidden h-screen w-4/5 p-4 bg-zinc-950 text-white text-xl transition-all ease-in-out duration-300 z-30 overflow-auto"
     :class="[sidebarOpened ? 'translate-x-0' : '-translate-x-full']"
   >
-    <h1 class="text-xl">JoãoPugsley</h1>
+    <h1 class="text-xl">Mike Kouyoumdjian</h1>
     <ul class="flex flex-col space-y-2 mt-4 text-zinc-400">
         <h3 class="text-base">Navigation</h3>
       <SidebarMobileLink
