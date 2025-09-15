@@ -2,9 +2,9 @@
   useSeoMeta({
     title: "JoãoPugsley | Web Developer",
     ogTitle: "JoãoPugsley | Web Developer",
-    description: "Explore o portfólio de desenvolvimento web de João Pugsley, que exibe uma ampla variedade de sites criativos e responsivos.",
-    ogDescription: "Explore o portfólio de desenvolvimento web de João Pugsley, que exibe uma ampla variedade de sites criativos e responsivos.",
-    keywords: "desenvolvimento web, web design, portfolio, João Vitor Pugsley, João Pugsley, desenvolvimento front-end, desenvolvimento back-end, design responsivo",
+  description: "Explore João Pugsley's web development portfolio, showcasing a wide variety of creative and responsive websites.",
+  ogDescription: "Explore João Pugsley's web development portfolio, showcasing a wide variety of creative and responsive websites.",
+  keywords: "web development, web design, portfolio, João Vitor Pugsley, João Pugsley, front-end development, back-end development, responsive design",
     viewport: "width=device-width, initial-scale=1",
     ogType: "website",
     ogUrl: "https://joaopugsley.dev",

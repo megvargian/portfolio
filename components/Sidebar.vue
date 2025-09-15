@@ -8,17 +8,17 @@
     {
       href: "/",
       icon: "material-symbols:home-outline",
-      title: "Início",
+      title: "Home",
     },
     {
       href: "/about",
       icon: "material-symbols:account-circle",
-      title: "Sobre",
+      title: "About",
     },
     {
       href: "/projects",
       icon: "material-symbols:work-outline",
-      title: "Projetos",
+      title: "Projects",
     },
   ]
 
@@ -49,20 +49,20 @@
     @click="toggleSidebar"
     class="flex fixed md:hidden z-40 items-center gap-2 text-white bg-zinc-900 border border-zinc-800 rounded-xl p-3 hover:brightness-125 transition-all bottom-4 left-4"
   >
-    <Icon 
+    <Icon
       name="ic:outline-keyboard-command-key"
       color="white"
     />
   </button>
 
   <!-- mobile -->
-  <nav 
+  <nav
     class="flex flex-col space-y-2 fixed md:hidden h-screen w-4/5 p-4 bg-zinc-950 text-white text-xl transition-all ease-in-out duration-300 z-30 overflow-auto"
     :class="[sidebarOpened ? 'translate-x-0' : '-translate-x-full']"
   >
     <h1 class="text-xl">JoãoPugsley</h1>
     <ul class="flex flex-col space-y-2 mt-4 text-zinc-400">
-      <h3 class="text-base">Navegação</h3>
+        <h3 class="text-base">Navigation</h3>
       <SidebarMobileLink
         v-for="page in sidebarPages"
         :href="page.href"

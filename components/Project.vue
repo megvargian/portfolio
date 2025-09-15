@@ -11,7 +11,7 @@
 
 <template>
   <li class="flex flex-col rounded-xl items-center justify-center border border-zinc-800 bg-zinc-950 transition-all duration-300 group overflow-hidden min-h-[405px] sm:min-h-0">
-    <img :src="image" alt="Foto do projeto" class="w-full h-full aspect-video md:group-hover:blur-sm md:group-hover:opacity-60 transition-all duration-300">
+  <img :src="image" alt="Project image" class="w-full h-full aspect-video md:group-hover:blur-sm md:group-hover:opacity-60 transition-all duration-300">
 
     <!-- mobile -->
     <div class="flex md:hidden flex-col p-4 w-full">
@@ -45,7 +45,7 @@
           <Icon name="fluent:live-20-filled"/>
           <p class="text-base flex w-full items-center justify-between">
             <span>
-              Visite o site
+              Visit the site
             </span>
             <Icon name="tabler:external-link" color="text-zinc-400"/>
           </p>
