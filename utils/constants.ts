@@ -6,6 +6,12 @@ export const projects = [
     live_url: "https://chrisrammouz.com"
   },
   {
+    image: "/images/projects/cracked-pepper-bistro.png",
+    title: "Cracked Pepper Bistro",
+    description: "Website for Cracked Pepper Bistro, featuring menu, reservations, and events for a modern dining experience.",
+    live_url: "https://crackedpepperbistro.com"
+  },
+  {
     image: "/images/projects/naqd.png",
     title: "NAQD",
     description: "NAQD platform seeks to cover current news and analyze social and cultural issues in a way that departs from traditional media methods.",
@@ -32,13 +38,13 @@ export const projects = [
   {
     image: "/images/projects/maisonlesley.png",
     title: "Maison Lesley",
-    description: "E-commerce for Woman Luxury Dresses.",
+    description: "Luxury real estate portfolio for Maison Lesley, featuring exclusive properties.",
     live_url: "https://maisonlesley.com"
   },
   {
     image: "/images/projects/nuwera.png",
     title: "Nuwera",
-    description: "E-commerce platform for Nuwera band merchandise.",
+    description: "E-commerce platform for unique and high-quality products.",
     live_url: "https://nuwera.com"
   },
   {
@@ -47,4 +53,4 @@ export const projects = [
     description: "Event management platform for organizing and tracking events efficiently.",
     live_url: "https://e-vents.com"
   },
-]
+];
