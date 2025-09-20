@@ -1,62 +1,42 @@
 <script setup lang="ts">
   const mainSkills = [
-    {
-      icon: "tabler:brand-typescript",
-      title: "TypeScript",
-    },
-    {
-      icon: "tabler:brand-nuxt",
-      title: "Nuxt",
-    },
-    {
-      icon: "tabler:brand-vue",
-      title: "Vue",
-    },
-    {
-      icon: "tabler:brand-nextjs",
-      title: "Next.js",
-    },
-    {
-      icon: "tabler:brand-react",
-      title: "React",
-    },
-    {
-      icon: "simple-icons:dotnet",
-      title: ".NET",
-    },
-    {
-      icon: "simple-icons:nestjs",
-      title: "Nest.js",
-    },
-    {
-      icon: "mdi:tailwind",
-      title: "TailwindCSS",
-    },
-    {
-      icon: "tabler:brand-rust",
-      title: "Rust",
-    },
-    {
-      icon: "simple-icons:express",
-      title: "Express",
-    },
-    {
-      icon: "akar-icons:postgresql-fill",
-      title: "PostgreSQL",
-    },
-    {
-      icon: "tabler:brand-mongodb",
-      title: "MongoDB",
-    },
-    {
-      icon: "tabler:brand-firebase",
-      title: "Firebase",
-    },
-    {
-      icon: "mdi:docker",
-      title: "Docker",
-    },
-  ]
+    { icon: "tabler:brand-vue", title: "Vue.js" },
+    { icon: "tabler:brand-nuxt", title: "Nuxt" },
+    { icon: "mdi:wordpress", title: "WordPress" },
+    { icon: "mdi:language-php", title: "PHP" },
+    { icon: "tabler:brand-typescript", title: "TypeScript" },
+    { icon: "tabler:brand-javascript", title: "JavaScript" },
+    { icon: "mdi:language-go", title: "Go" },
+    { icon: "mdi:nodejs", title: "Node.js" },
+    { icon: "tabler:brand-vite", title: "Vite" },
+    { icon: "mdi:tailwind", title: "TailwindCSS" },
+    { icon: "mdi:sass", title: "SASS" },
+    { icon: "", title: "Strapi" },
+    { icon: "", title: "Nodemon" },
+    { icon: "mdi:jquery", title: "jQuery" },
+    { icon: "", title: "JWT" },
+    { icon: "", title: "Gutenberg" },
+    { icon: "simple-icons:express", title: "Express.js" },
+    { icon: "", title: "EJS" },
+    { icon: "", title: "Apache" },
+    { icon: "", title: "Nginx" },
+    { icon: "", title: "MySQL" },
+    { icon: "", title: "MongoDB" },
+    { icon: "", title: "Firebase" },
+    { icon: "", title: "Postgres" },
+    { icon: "", title: "Heroku" },
+    { icon: "", title: "Netlify" },
+    { icon: "mdi:google-cloud", title: "Google Cloud" },
+    { icon: "mdi:git", title: "Git" },
+    { icon: "mdi:github", title: "GitHub" },
+    { icon: "mdi:gitlab", title: "GitLab" },
+    { icon: "mdi:bitbucket", title: "Bitbucket" },
+    { icon: "", title: "Adobe XD" },
+    { icon: "", title: "Figma" },
+    { icon: "", title: "Twilio" },
+    { icon: "mdi:trello", title: "Trello" },
+    { icon: "mdi:docker", title: "Docker" },
+  ];
 </script>
 
 <template>
