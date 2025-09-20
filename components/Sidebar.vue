@@ -79,6 +79,7 @@
         :href="page.href"
         :icon="page.icon"
         :title="page.title"
+        @click="toggleSidebar"
       />
     </ul>
     <ul class="flex flex-col space-y-2 mt-4 text-zinc-400">
@@ -88,6 +89,7 @@
         :href="link.href"
         :icon="link.icon"
         :title="link.title"
+        @click="toggleSidebar"
       />
     </ul>
   </nav>
@@ -106,7 +108,7 @@
     </button>
 
     <div class="flex flex-col space-y-2 mt-4 w-full text-zinc-400">
-      <h3 v-if="sidebarOpened" class="text-base anim-fade">Navegação</h3>
+      <h3 v-if="sidebarOpened" class="text-base anim-fade">Navigation</h3>
       <ul class="flex flex-col space-y-2 justify-center items-center w-full">
         <SidebarDesktopLink
           v-for="page in sidebarPages"
@@ -114,6 +116,7 @@
           :icon="page.icon"
           :title="page.title"
           :opened="sidebarOpened"
+          @click="toggleSidebar"
         />
       </ul>
       <h3 v-if="sidebarOpened" class="text-base anim-fade">Social</h3>
@@ -125,6 +128,7 @@
           :icon="link.icon"
           :title="link.title"
           :opened="sidebarOpened"
+          @click="toggleSidebar"
         />
       </ul>
     </div>
