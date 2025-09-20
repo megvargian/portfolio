@@ -1,8 +1,19 @@
 <script setup lang="ts">
+
+  import { watch } from 'vue';
   const sidebarOpened = useState('sidebarOpened', () => false);
   const toggleSidebar = () => {
     sidebarOpened.value = !sidebarOpened.value
   }
+
+  // Prevent body scroll on mobile when sidebar is open
+  watch(sidebarOpened, (opened) => {
+    if (opened && window.innerWidth < 768) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  });
 
   const sidebarPages = [
     {
