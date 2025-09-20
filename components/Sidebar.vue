@@ -24,17 +24,17 @@
 
   const sidebarLinks = [
     {
-      href: "https://github.com/joaopugsley",
+      href: "https://github.com/megvargian",
       icon: "mdi:github",
       title: "Github",
     },
     {
-      href: "https://www.linkedin.com/in/joaopugsley",
+      href: "https://www.linkedin.com/in/mike-kouyoumdjian-b6b428189/",
       icon: "mdi:linkedin",
       title: "LinkedIn",
     },
     {
-      href: "mailto:joaopugsleyy@gmail.com",
+      href: "mailto:kouyoumdjianmike@gmail.com",
       icon: "material-symbols:mail",
       title: "E-Mail",
     },
