@@ -47,9 +47,9 @@
     >
       <Icon
         :name="skill.icon"
-        class="text-4xl text-zinc-500"
+        :class="['text-4xl', theme === 'light' ? 'text-zinc-700' : 'text-zinc-400']"
       />
-      <span>
+      <span class="text-white">
         {{ skill.title }}
       </span>
     </li>

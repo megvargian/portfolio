@@ -10,10 +10,17 @@
   :root {
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
-    background: #09090b;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: 'Hanken Grotesk', sans-serif;
+  }
+  .dark {
+    background: #09090b !important;
+    color: white !important;
+  }
+  .light {
+    background: #fff !important;
+    color: #222 !important;
   }
 
   * {

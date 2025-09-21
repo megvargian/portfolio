@@ -53,4 +53,10 @@ export const projects = [
     description: "Event management platform for organizing and tracking events efficiently.",
     live_url: "https://e-vents.me/example-two"
   },
+  {
+    image: "/images/projects/polyblog.png",
+    title: "Polyblog",
+    description: "A platform for sharing and discovering blog content.",
+    live_url: "https://polybloglb.com"
+  },
 ];

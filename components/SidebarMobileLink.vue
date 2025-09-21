@@ -18,7 +18,10 @@
     class="flex relative items-center space-x-2 w-full h-full inset-0 p-3"
     :class="[isActive ? 'text-white bg-zinc-900 border border-zinc-800 rounded-xl' : '']"
   >
-    <Icon :name="icon" color="white"/>
+    <Icon
+      :name="icon"
+      :color="isActive && theme === 'light' ? 'white' : (theme === 'light' ? '#4B5563' : 'white')"
+    />
     <span class="text-base">{{ title }}</span>
   </NuxtLink>
 </template>

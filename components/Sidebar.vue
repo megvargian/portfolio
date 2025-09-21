@@ -1,9 +1,17 @@
 <script setup lang="ts">
 
   import { watch } from 'vue';
+  import { theme, toggleTheme, getButtonClass } from '../utils/theme';
   const sidebarOpened = useState('sidebarOpened', () => false);
   const toggleSidebar = () => {
     sidebarOpened.value = !sidebarOpened.value
+  }
+
+  function handleThemeToggle() {
+    toggleTheme();
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      sidebarOpened.value = false;
+    }
   }
 
   // Prevent body scroll on mobile when sidebar is open
@@ -68,36 +76,43 @@
 
   <!-- mobile -->
   <nav
-    class="flex flex-col space-y-2 fixed md:hidden h-screen w-4/5 p-4 bg-zinc-950 text-white text-xl transition-all ease-in-out duration-300 z-30 overflow-auto"
-    :class="[sidebarOpened ? 'translate-x-0' : '-translate-x-full']"
+    class="flex flex-col items-center justify-center space-y-2 fixed md:hidden h-screen w-4/5 p-4 text-xl transition-all ease-in-out duration-300 z-30 overflow-auto"
+    :class="[sidebarOpened ? 'translate-x-0' : '-translate-x-full', theme === 'light' ? 'bg-white text-black' : 'bg-zinc-950 text-white']"
   >
-    <h1 class="text-xl">Mike Kouyoumdjian</h1>
-    <ul class="flex flex-col space-y-2 mt-4 text-zinc-400">
-        <h3 class="text-base">Navigation</h3>
+    <h1 class="text-xl w-full text-center">Mike Kouyoumdjian</h1>
+    <ul class="flex flex-col items-center space-y-2 mt-4 w-full" :class="theme === 'light' ? 'text-zinc-700' : 'text-zinc-400'">
+      <h3 class="text-base w-full text-center">Navigation</h3>
       <SidebarMobileLink
         v-for="page in sidebarPages"
         :href="page.href"
         :icon="page.icon"
         :title="page.title"
         @click="toggleSidebar"
+        class="w-full flex justify-center"
       />
+      <li class="mt-4 w-full flex justify-center">
+        <button @click="handleThemeToggle" :class="'flex items-center gap-2 px-3 py-2 rounded-lg border justify-center ' + getButtonClass()">
+          <Icon :name="theme === 'dark' ? 'material-symbols:dark-mode' : 'material-symbols:light-mode'" />
+        </button>
+      </li>
     </ul>
-    <ul class="flex flex-col space-y-2 mt-4 text-zinc-400">
-      <h3 class="text-base">Social</h3>
+    <ul class="flex flex-col items-center space-y-2 mt-4 w-full" :class="theme === 'light' ? 'text-zinc-700' : 'text-zinc-400'">
+      <h3 class="text-base w-full text-center">Social</h3>
       <SidebarMobileSocialMediaLink
         v-for="link in sidebarLinks"
         :href="link.href"
         :icon="link.icon"
         :title="link.title"
         @click="toggleSidebar"
+        class="w-full flex justify-center"
       />
     </ul>
   </nav>
 
   <!-- desktop -->
   <nav
-    class="hidden md:flex fixed h-screen bg-zinc-950 shadow-xl border-r border-zinc-900 text-white text-xl z-20 transition-all duration-300 p-4"
-    :class="[sidebarOpened ? 'w-72' : 'w-24']"
+    class="hidden md:flex fixed h-screen shadow-xl border-r text-xl z-20 transition-all duration-300 p-4 items-center justify-center"
+    :class="[sidebarOpened ? 'w-72' : 'w-24', theme === 'light' ? 'bg-white text-black border-zinc-300' : 'bg-zinc-950 text-white border-zinc-900']"
   >
     <button
       @click="toggleSidebar"
@@ -107,9 +122,11 @@
       <Icon v-else="sidebarOpened" name="ic:round-keyboard-arrow-right" color="white"/>
     </button>
 
-    <div class="flex flex-col space-y-2 mt-4 w-full text-zinc-400">
-      <h3 v-if="sidebarOpened" class="text-base anim-fade">Navigation</h3>
-      <ul class="flex flex-col space-y-2 justify-center items-center w-full">
+    <div
+      :class="[sidebarOpened ? 'flex flex-col items-start justify-start' : 'flex flex-col items-center justify-center', 'space-y-2 mt-4 w-full', theme === 'light' ? 'text-zinc-700' : 'text-zinc-400']"
+    >
+      <h3 v-if="sidebarOpened" class="text-base anim-fade w-full text-left">Navigation</h3>
+      <ul :class="[sidebarOpened ? 'flex flex-col items-start justify-start' : 'flex flex-col items-center justify-center', 'space-y-2 w-full']">
         <SidebarDesktopLink
           v-for="page in sidebarPages"
           :href="page.href"
@@ -117,11 +134,17 @@
           :title="page.title"
           :opened="sidebarOpened"
           @click="toggleSidebar"
+          :class="sidebarOpened ? 'w-full flex justify-start' : 'w-full flex justify-center'"
         />
+        <li :class="sidebarOpened ? 'mt-4 w-full flex justify-start' : 'mt-4 w-full flex justify-center'">
+          <button @click="toggleTheme" :class="'flex items-center gap-2 px-3 py-2 rounded-lg border ' + getButtonClass()">
+            <Icon :name="theme === 'dark' ? 'material-symbols:dark-mode' : 'material-symbols:light-mode'" />
+          </button>
+        </li>
       </ul>
-      <h3 v-if="sidebarOpened" class="text-base anim-fade">Social</h3>
+      <h3 v-if="sidebarOpened" class="text-base anim-fade w-full text-left">Social</h3>
       <hr v-else class="w-full border-zinc-800">
-      <ul class="flex flex-col space-y-2 justify-center items-center w-full">
+      <ul :class="[sidebarOpened ? 'flex flex-col items-start justify-start' : 'flex flex-col items-center justify-center', 'space-y-2 w-full']">
         <SidebarDesktopSocialMediaLink
           v-for="link in sidebarLinks"
           :href="link.href"
@@ -129,6 +152,7 @@
           :title="link.title"
           :opened="sidebarOpened"
           @click="toggleSidebar"
+          :class="sidebarOpened ? 'w-full flex justify-start' : 'w-full flex justify-center'"
         />
       </ul>
     </div>
