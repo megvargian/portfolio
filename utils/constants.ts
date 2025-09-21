@@ -15,13 +15,13 @@ export const projects = [
     image: "/images/projects/naqd.png",
     title: "NAQD",
     description: "NAQD platform seeks to cover current news and analyze social and cultural issues in a way that departs from traditional media methods.",
-    live_url: "https://naqd.com"
+    live_url: "https://naqd.media"
   },
   {
     image: "/images/projects/flora.png",
     title: "Flora",
     description: "A modern web app for plant enthusiasts to discover and manage their collections.",
-    live_url: "https://flora.com"
+    live_url: "https://florawoodcoatings.com/"
   },
   {
     image: "/images/projects/host2media.png",
@@ -45,12 +45,12 @@ export const projects = [
     image: "/images/projects/nuwera.png",
     title: "Nuwera",
     description: "E-commerce platform for unique and high-quality products.",
-    live_url: "https://nuwera.com"
+    live_url: "https://nuwera.band"
   },
   {
     image: "/images/projects/e-vents.png",
     title: "E-Vents",
     description: "Event management platform for organizing and tracking events efficiently.",
-    live_url: "https://e-vents.com"
+    live_url: "https://e-vents.me/example-two"
   },
 ];
