@@ -34,9 +34,11 @@
   <h2 :class="['text-xl sm:text-2xl', theme === 'light' ? 'text-black' : 'text-white']">Featured Projects</h2>
         <NuxtLink
           to="/projects"
+          aria-label="View all projects - See Mike Kouyoumdjian's complete portfolio of web development projects"
+          title="View all projects"
           :class="['px-2 sm:px-3 py-1 rounded-lg text-xl border border-zinc-800 transition-all duration-200 space-x-1 flex items-center', theme === 'light' ? 'bg-white text-black hover:bg-zinc-100 hover:text-black' : 'bg-zinc-900 text-white hover:brightness-150']"
         >
-          <span :class="['font-normal sm:font-semibold text-base', theme === 'light' ? 'text-black' : 'text-white']"> See More </span>
+          <span :class="['font-normal sm:font-semibold text-base', theme === 'light' ? 'text-black' : 'text-white']">View All Projects</span>
           <Icon name="ic:round-keyboard-arrow-right" />
         </NuxtLink>
       </div>
