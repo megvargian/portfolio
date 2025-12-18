@@ -82,14 +82,17 @@
     <h1 class="text-xl w-full text-center">Mike Kouyoumdjian</h1>
     <ul class="flex flex-col items-center space-y-2 mt-4 w-full" :class="theme === 'light' ? 'text-zinc-700' : 'text-zinc-400'">
       <h3 class="text-base w-full text-center">Navigation</h3>
-      <SidebarMobileLink
+      <li
         v-for="page in sidebarPages"
-        :href="page.href"
-        :icon="page.icon"
-        :title="page.title"
-        @click="toggleSidebar"
         class="w-full flex justify-center"
-      />
+      >
+        <SidebarMobileLink
+          :href="page.href"
+          :icon="page.icon"
+          :title="page.title"
+          @click="toggleSidebar"
+        />
+      </li>
       <li class="mt-4 w-full flex justify-center">
         <button @click="handleThemeToggle" :class="'flex items-center gap-2 px-3 py-2 rounded-lg border justify-center ' + getButtonClass()" :aria-label="'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' theme'">
           <Icon :name="theme === 'dark' ? 'material-symbols:dark-mode' : 'material-symbols:light-mode'" />
@@ -98,14 +101,17 @@
     </ul>
     <ul class="flex flex-col items-center space-y-2 mt-4 w-full" :class="theme === 'light' ? 'text-zinc-700' : 'text-zinc-400'">
       <h3 class="text-base w-full text-center">Social</h3>
-      <SidebarMobileSocialMediaLink
+      <li
         v-for="link in sidebarLinks"
-        :href="link.href"
-        :icon="link.icon"
-        :title="link.title"
-        @click="toggleSidebar"
         class="w-full flex justify-center"
-      />
+      >
+        <SidebarMobileSocialMediaLink
+          :href="link.href"
+          :icon="link.icon"
+          :title="link.title"
+          @click="toggleSidebar"
+        />
+      </li>
     </ul>
   </nav>
 
@@ -128,15 +134,18 @@
     >
       <h3 v-if="sidebarOpened" class="text-base anim-fade w-full text-left">Navigation</h3>
       <ul :class="[sidebarOpened ? 'flex flex-col items-start justify-start' : 'flex flex-col items-center justify-center', 'space-y-2 w-full']">
-        <SidebarDesktopLink
+        <li
           v-for="page in sidebarPages"
-          :href="page.href"
-          :icon="page.icon"
-          :title="page.title"
-          :opened="sidebarOpened"
-          @click="toggleSidebar"
           :class="sidebarOpened ? 'w-full flex justify-start' : 'w-full flex justify-center'"
-        />
+        >
+          <SidebarDesktopLink
+            :href="page.href"
+            :icon="page.icon"
+            :title="page.title"
+            :opened="sidebarOpened"
+            @click="toggleSidebar"
+          />
+        </li>
         <li :class="sidebarOpened ? 'mt-4 w-full flex justify-start' : 'mt-4 w-full flex justify-center'">
           <button @click="toggleTheme" :class="'flex items-center gap-2 px-3 py-2 rounded-lg border ' + getButtonClass()" :aria-label="'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' theme'">
             <Icon :name="theme === 'dark' ? 'material-symbols:dark-mode' : 'material-symbols:light-mode'" />
@@ -146,15 +155,18 @@
       <h3 v-if="sidebarOpened" class="text-base anim-fade w-full text-left">Social</h3>
       <hr v-else class="w-full border-zinc-800">
       <ul :class="[sidebarOpened ? 'flex flex-col items-start justify-start' : 'flex flex-col items-center justify-center', 'space-y-2 w-full']">
-        <SidebarDesktopSocialMediaLink
+        <li
           v-for="link in sidebarLinks"
-          :href="link.href"
-          :icon="link.icon"
-          :title="link.title"
-          :opened="sidebarOpened"
-          @click="toggleSidebar"
           :class="sidebarOpened ? 'w-full flex justify-start' : 'w-full flex justify-center'"
-        />
+        >
+          <SidebarDesktopSocialMediaLink
+            :href="link.href"
+            :icon="link.icon"
+            :title="link.title"
+            :opened="sidebarOpened"
+            @click="toggleSidebar"
+          />
+        </li>
       </ul>
     </div>
   </nav>
