@@ -66,6 +66,7 @@
   <!-- mobile -->
   <button
     @click="toggleSidebar"
+    aria-label="Toggle navigation menu"
     class="flex fixed md:hidden z-40 items-center gap-2 text-white bg-zinc-900 border border-zinc-800 rounded-xl p-3 hover:brightness-125 transition-all bottom-4 left-4"
   >
     <Icon
@@ -80,39 +81,43 @@
     :class="[sidebarOpened ? 'translate-x-0' : '-translate-x-full', theme === 'light' ? 'bg-white text-black' : 'bg-zinc-950 text-white']"
   >
     <h1 class="text-xl w-full text-center">Mike Kouyoumdjian</h1>
-    <ul class="flex flex-col items-center space-y-2 mt-4 w-full" :class="theme === 'light' ? 'text-zinc-700' : 'text-zinc-400'">
-      <h3 class="text-base w-full text-center">Navigation</h3>
-      <li
-        v-for="page in sidebarPages"
-        class="w-full flex justify-center"
-      >
+    <nav class="mt-4 w-full" :class="theme === 'light' ? 'text-zinc-700' : 'text-zinc-400'">
+      <h2 class="text-base w-full text-center mb-2">Navigation</h2>
+      <ul class="flex flex-col items-center space-y-2 w-full">
+        <li
+          v-for="page in sidebarPages"
+          class="w-full flex justify-center"
+        >
         <SidebarMobileLink
           :href="page.href"
           :icon="page.icon"
           :title="page.title"
           @click="toggleSidebar"
         />
-      </li>
-      <li class="mt-4 w-full flex justify-center">
-        <button @click="handleThemeToggle" :class="'flex items-center gap-2 px-3 py-2 rounded-lg border justify-center ' + getButtonClass()" :aria-label="'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' theme'">
-          <Icon :name="theme === 'dark' ? 'material-symbols:dark-mode' : 'material-symbols:light-mode'" />
-        </button>
-      </li>
-    </ul>
-    <ul class="flex flex-col items-center space-y-2 mt-4 w-full" :class="theme === 'light' ? 'text-zinc-700' : 'text-zinc-400'">
-      <h3 class="text-base w-full text-center">Social</h3>
-      <li
-        v-for="link in sidebarLinks"
-        class="w-full flex justify-center"
-      >
+        </li>
+        <li class="mt-4 w-full flex justify-center">
+          <button @click="handleThemeToggle" :class="'flex items-center gap-2 px-3 py-2 rounded-lg border justify-center ' + getButtonClass()" :aria-label="'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' theme'">
+            <Icon :name="theme === 'dark' ? 'material-symbols:dark-mode' : 'material-symbols:light-mode'" />
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <nav class="mt-4 w-full" :class="theme === 'light' ? 'text-zinc-700' : 'text-zinc-400'">
+      <h2 class="text-base w-full text-center mb-2">Social</h2>
+      <ul class="flex flex-col items-center space-y-2 w-full">
+        <li
+          v-for="link in sidebarLinks"
+          class="w-full flex justify-center"
+        >
         <SidebarMobileSocialMediaLink
           :href="link.href"
           :icon="link.icon"
           :title="link.title"
           @click="toggleSidebar"
         />
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </nav>
   </nav>
 
   <!-- desktop -->
@@ -132,42 +137,46 @@
     <div
       :class="[sidebarOpened ? 'flex flex-col items-start justify-start' : 'flex flex-col items-center justify-center', 'space-y-2 mt-4 w-full', theme === 'light' ? 'text-zinc-700' : 'text-zinc-400']"
     >
-      <h3 v-if="sidebarOpened" class="text-base anim-fade w-full text-left">Navigation</h3>
-      <ul :class="[sidebarOpened ? 'flex flex-col items-start justify-start' : 'flex flex-col items-center justify-center', 'space-y-2 w-full']">
-        <li
-          v-for="page in sidebarPages"
-          :class="sidebarOpened ? 'w-full flex justify-start' : 'w-full flex justify-center'"
-        >
+      <nav class="w-full">
+        <h2 v-if="sidebarOpened" class="text-base anim-fade w-full text-left mb-2">Navigation</h2>
+        <ul :class="[sidebarOpened ? 'flex flex-col items-start justify-start' : 'flex flex-col items-center justify-center', 'space-y-2 w-full']">
+          <li
+            v-for="page in sidebarPages"
+            :class="sidebarOpened ? 'w-full flex justify-start' : 'w-full flex justify-center'"
+          >
           <SidebarDesktopLink
             :href="page.href"
             :icon="page.icon"
             :title="page.title"
             :opened="sidebarOpened"
             @click="toggleSidebar"
-          />
-        </li>
-        <li :class="sidebarOpened ? 'mt-4 w-full flex justify-start' : 'mt-4 w-full flex justify-center'">
-          <button @click="toggleTheme" :class="'flex items-center gap-2 px-3 py-2 rounded-lg border ' + getButtonClass()" :aria-label="'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' theme'">
-            <Icon :name="theme === 'dark' ? 'material-symbols:dark-mode' : 'material-symbols:light-mode'" />
-          </button>
-        </li>
-      </ul>
-      <h3 v-if="sidebarOpened" class="text-base anim-fade w-full text-left">Social</h3>
-      <hr v-else class="w-full border-zinc-800">
-      <ul :class="[sidebarOpened ? 'flex flex-col items-start justify-start' : 'flex flex-col items-center justify-center', 'space-y-2 w-full']">
-        <li
-          v-for="link in sidebarLinks"
-          :class="sidebarOpened ? 'w-full flex justify-start' : 'w-full flex justify-center'"
-        >
+            />
+          </li>
+          <li :class="sidebarOpened ? 'mt-4 w-full flex justify-start' : 'mt-4 w-full flex justify-center'">
+            <button @click="toggleTheme" :class="'flex items-center gap-2 px-3 py-2 rounded-lg border ' + getButtonClass()" :aria-label="'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' theme'">
+              <Icon :name="theme === 'dark' ? 'material-symbols:dark-mode' : 'material-symbols:light-mode'" />
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <nav class="w-full">
+        <h2 v-if="sidebarOpened" class="text-base anim-fade w-full text-left mb-2">Social</h2>
+        <hr v-else class="w-full border-zinc-800">
+        <ul :class="[sidebarOpened ? 'flex flex-col items-start justify-start' : 'flex flex-col items-center justify-center', 'space-y-2 w-full']">
+          <li
+            v-for="link in sidebarLinks"
+            :class="sidebarOpened ? 'w-full flex justify-start' : 'w-full flex justify-center'"
+          >
           <SidebarDesktopSocialMediaLink
             :href="link.href"
             :icon="link.icon"
             :title="link.title"
             :opened="sidebarOpened"
             @click="toggleSidebar"
-          />
-        </li>
-      </ul>
+            />
+          </li>
+        </ul>
+      </nav>
     </div>
   </nav>
 </template>
