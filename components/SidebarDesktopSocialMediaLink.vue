@@ -12,6 +12,7 @@
 <template>
   <a
     :href="href"
+    :aria-label="`Visit ${title} profile (opens in new tab)`"
     target="_blank"
     rel="noopener noreferrer"
     class="h-12 rounded-xl flex flex-row items-center drop-shadow-xl hover:brightness-150"

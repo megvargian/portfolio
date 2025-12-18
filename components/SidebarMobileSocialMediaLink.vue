@@ -12,6 +12,7 @@
   <a
     class="flex relative items-center space-x-2 w-full h-full inset-0 p-3"
     :href="href"
+    :aria-label="`Visit ${title} profile (opens in new tab)`"
     target="_blank"
     rel="noopener noreferrer"
   >

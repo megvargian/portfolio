@@ -15,6 +15,7 @@
 <template>
   <NuxtLink
     :to="href"
+    :aria-label="`Navigate to ${title} page`"
     class="flex relative items-center space-x-2 w-full h-full inset-0 p-3"
     :class="[isActive ? 'text-white bg-zinc-900 border border-zinc-800 rounded-xl' : '']"
   >

@@ -91,7 +91,7 @@
         class="w-full flex justify-center"
       />
       <li class="mt-4 w-full flex justify-center">
-        <button @click="handleThemeToggle" :class="'flex items-center gap-2 px-3 py-2 rounded-lg border justify-center ' + getButtonClass()">
+        <button @click="handleThemeToggle" :class="'flex items-center gap-2 px-3 py-2 rounded-lg border justify-center ' + getButtonClass()" :aria-label="'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' theme'">
           <Icon :name="theme === 'dark' ? 'material-symbols:dark-mode' : 'material-symbols:light-mode'" />
         </button>
       </li>
@@ -117,6 +117,7 @@
     <button
       @click="toggleSidebar"
       class="hidden md:flex absolute bg-zinc-900 border border-zinc-800 rounded-full -right-[15px] top-[calc(50vh-15px)] items-center justify-center p-1 transition-all duration-200 hover:brightness-150"
+      :aria-label="sidebarOpened ? 'Close navigation sidebar' : 'Open navigation sidebar'"
     >
       <Icon v-if="sidebarOpened" name="ic:round-keyboard-arrow-left" color="white"/>
       <Icon v-else="sidebarOpened" name="ic:round-keyboard-arrow-right" color="white"/>
@@ -137,7 +138,7 @@
           :class="sidebarOpened ? 'w-full flex justify-start' : 'w-full flex justify-center'"
         />
         <li :class="sidebarOpened ? 'mt-4 w-full flex justify-start' : 'mt-4 w-full flex justify-center'">
-          <button @click="toggleTheme" :class="'flex items-center gap-2 px-3 py-2 rounded-lg border ' + getButtonClass()">
+          <button @click="toggleTheme" :class="'flex items-center gap-2 px-3 py-2 rounded-lg border ' + getButtonClass()" :aria-label="'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' theme'">
             <Icon :name="theme === 'dark' ? 'material-symbols:dark-mode' : 'material-symbols:light-mode'" />
           </button>
         </li>
